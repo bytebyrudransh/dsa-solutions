@@ -2,8 +2,8 @@
 
 **Difficulty:** Hard  
 **Language:** Python3  
-**Runtime:** 21 ms  
-**Memory:** 19.9 MB  
+**Runtime:** 8473 ms  
+**Memory:** 20 MB  
 **Link:** [Problem Link](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
 
 ## Problem Description
