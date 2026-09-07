@@ -1,49 +1,31 @@
-from collections import Counter, defaultdict
-
 class Solution:
-    def findSubstring(self, s: str, words: list[str]) -> list[int]:
-        if not s or not words:
-            return []
-        
-        w = len(words[0])
-        k = len(words)
-        total = w * k
-        need = Counter(words)
-        n = len(s)
-        result = []
-        
-        # Run w separate sliding windows based on offset
-        for offset in range(w):
-            left = offset
-            count = 0                    # number of valid words currently in window
-            window = defaultdict(int)
+    def findSubstring(self, s: str, words: List[str]) -> List[int]:
+        word_freq = defaultdict(int)
+        for word in words:
+            word_freq[word] += 1
+
+        word_len = len(words[0])
+        # words of the same length
+        window = len(words) * word_len
+        ans = []
+
+        for i in range(len(s) - window + 1):
+            substr_freq = defaultdict(int)
+            j = i
+
+            while j < i + window:
+                current = s[j : j + word_len]
+                if current not in word_freq:
+                    break
+
+                substr_freq[current] += 1
+                if substr_freq[current] > word_freq[current]:
+                    break
+
+                j += word_len
             
-            # Walk in steps of w
-            for right in range(offset, n - w + 1, w):
-                chunk = s[right : right + w]
-                
-                if chunk in need:
-                    window[chunk] += 1
-                    count += 1
-                    
-                    # Shrink from left if we have too many of this chunk
-                    while window[chunk] > need[chunk]:
-                        left_chunk = s[left : left + w]
-                        window[left_chunk] -= 1
-                        count -= 1
-                        left += w
-                    
-                    # Window holds exactly k valid words -> record and slide
-                    if count == k:
-                        result.append(left)
-                        left_chunk = s[left : left + w]
-                        window[left_chunk] -= 1
-                        count -= 1
-                        left += w
-                else:
-                    # Invalid chunk -> reset window past it
-                    window.clear()
-                    count = 0
-                    left = right + w
+            if j == i + window:
+                ans.append(i)
+
+        return ans
         
-        return result
