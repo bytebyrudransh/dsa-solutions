@@ -2,8 +2,8 @@
 
 **Difficulty:** Medium  
 **Language:** Python  
-**Runtime:** 678 ms  
-**Memory:** 30.4 MB  
+**Runtime:** 624 ms  
+**Memory:** 30.5 MB  
 **Link:** [Problem Link](https://leetcode.com/problems/minimum-subarray-length-with-distinct-sum-at-least-k/)
 
 ## Problem Description
