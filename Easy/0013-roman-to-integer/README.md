@@ -2,8 +2,8 @@
 
 **Difficulty:** Easy  
 **Language:** Python  
-**Runtime:** 12 ms  
-**Memory:** 12.5 MB  
+**Runtime:** 5 ms  
+**Memory:** 12.3 MB  
 **Link:** [Problem Link](https://leetcode.com/problems/roman-to-integer/)
 
 ## Problem Description
