@@ -3,7 +3,7 @@
 **Difficulty:** Medium  
 **Language:** Python3  
 **Runtime:** 0 ms  
-**Memory:** 20.6 MB  
+**Memory:** 20.5 MB  
 **Link:** [Problem Link](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
 ## Problem Description
